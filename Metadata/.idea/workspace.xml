@@ -27,8 +27,8 @@
       <file leaf-file-name="aleparser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aleparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2188065" vertical-offset="736" max-vertical-offset="1575">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5117541" vertical-offset="1007" max-vertical-offset="1590">
+              <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
               <folding>
                 <element signature="e#95#123#0" expanded="true" />
               </folding>
@@ -481,8 +481,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aleparser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2188065" vertical-offset="736" max-vertical-offset="1575">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5117541" vertical-offset="1007" max-vertical-offset="1590">
+          <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
           <folding>
             <element signature="e#95#123#0" expanded="true" />
           </folding>

@@ -83,7 +83,8 @@ class Ale_parser:
         return result
 
     def group(self, key=None):
-
+        """Groups dicts returned by dicts function together by key.
+        """
         if key is None:
             key = self.keys[0]
         if key not in self.keys:
