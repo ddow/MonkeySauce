@@ -62,7 +62,7 @@ class Ale_parser:
             return [item[key] for item in items]
 
     def slice(self, start=0, stop=None, step=1):
-        """retruns opbject containing slice of Ale_parser object.
+        """returns object containing slice of Ale_parser object.
         """
         if not isinstance(start, int):
             for item in self.data:
