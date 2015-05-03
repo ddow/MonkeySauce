@@ -92,8 +92,3 @@ class Ale_parser:
         data = sorted(self.dicts(value), key=lambda d: d.get(key))
         result = [list(g) for k, g in groupby(data)]
         return result
-
-
-#if __name__ == '__main__':
-#    import doctest
-#    doctest.testmod()
