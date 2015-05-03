@@ -82,14 +82,14 @@ class Ale_parser:
         result = islice(self.data, start, stop, step)
         return result
 
-    def group(self, key=None):
+    def group(self, key=None, value=None):
         """Groups dicts returned by dicts function together by key.
         """
         if key is None:
             key = self.keys[0]
         if key not in self.keys:
             raise ValueError('The key you entered does not exist in this ALE.')
-        data = sorted(self.dicts(), key=lambda d: d.get(key))
+        data = sorted(self.dicts(value), key=lambda d: d.get(key))
         result = [list(g) for k, g in groupby(data)]
         print(result)
         return result
