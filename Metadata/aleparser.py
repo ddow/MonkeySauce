@@ -91,7 +91,6 @@ class Ale_parser:
             raise ValueError('The key you entered does not exist in this ALE.')
         data = sorted(self.dicts(value), key=lambda d: d.get(key))
         result = [list(g) for k, g in groupby(data)]
-        print(result)
         return result
 
 
