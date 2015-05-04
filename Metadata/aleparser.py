@@ -1,6 +1,5 @@
 __author__ = 'Daniel Dow for PIX|System'
 
-<<<<<<< Updated upstream
 "Parses ALE metadata into indexed data structures."
 
 from itertools import islice
@@ -11,7 +10,7 @@ PARSE_MODE_UNKNOWN = 0
 PARSE_MODE_HEADER = 1
 PARSE_MODE_COLUMNS = 2
 PARSE_MODE_DATA = 3
-=======
+
 """
 Parses ALE metadata into indexed data structures.
 """
