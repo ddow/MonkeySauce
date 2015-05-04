@@ -1,5 +1,6 @@
 __author__ = 'Daniel Dow for PIX|System'
 
+<<<<<<< Updated upstream
 "Parses ALE metadata into indexed data structures."
 
 from itertools import islice
@@ -10,33 +11,40 @@ PARSE_MODE_UNKNOWN = 0
 PARSE_MODE_HEADER = 1
 PARSE_MODE_COLUMNS = 2
 PARSE_MODE_DATA = 3
+=======
+"""
+Parses ALE metadata into indexed data structures.
+"""
 
-
-class Ale_parser:
-    """This class parses ALEs and defines methods for reading metadata from them.
+class AleParser:
+    """This class parses ALEs and defines methods
+    for reading metadata from them.
     """
     def __init__(self, file):
-        """Data structures are self.keys and self.data.  The data structure
-         self.keys is a list of the keys from the ALE.  The data structure
-         self.data is a list of the items in the ALE containing a list of
-         the metadata values for the item.
+        """Data structures are self.keys and self.data.
+        The data structure self.keys is a list of the
+        keys from the ALE.  The data structure self.data
+        is a list of the items in the ALE containing a
+        list of the metadata values for the item.
         """
         self.data = []
-        parse_mode = PARSE_MODE_UNKNOWN
+        parse_mode = 'unknown'
         for line in open(file, 'r'):
             # Figure out if we should change our parse mode
-            if line == 'Column\n':
-                parse_mode = PARSE_MODE_COLUMNS
+            if line == '':
                 continue
-            elif line == 'Data\n':
-                parse_mode = PARSE_MODE_DATA
+            if line.strip() == 'Column':
+                parse_mode = 'keys'
+                continue
+            elif line.strip() == 'Data':
+                parse_mode = 'data'
                 continue
             # Parse the data into keys or a list of items
-            if parse_mode == PARSE_MODE_COLUMNS:
+            if parse_mode == 'keys':
                 self.keys = line.strip().split('\t')
-                parse_mode = PARSE_MODE_UNKNOWN
+                parse_mode = 'unknown'
                 continue
-            elif parse_mode == PARSE_MODE_DATA:
+            elif parse_mode == 'data':
                 item = line.strip().split('\t')
                 self.data.append(item)
                 continue
