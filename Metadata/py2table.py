@@ -2,38 +2,37 @@ __author__ = 'ddow'
 
 from Metadata import aleparser
 
-def list2tdrow(ale):
+def list2tdrow(data):
     """Returns a data row for a webpage html table.
     """
-    lists = ale.data
-    result = '<tr>'
-    for item in lists:
-        for value in item:
-            result += '<td>' + value.strip() + '</td>'
-        result += '\n'
-    result += '</tr>'
-    return result
+    lists = data
+    line = '<tr>'
+    for value in lists:
+        if not value: value = 'blank'
+        line += '<td>' + value.strip() + '</td>'
+    line += '</tr>'
+    return line
 
-def list2throw(ale):
+def list2throw(keys):
     """Returns a data headers for a webpage html table.
     """
-    lists = ale.keys
-    result = '<tr>'
+    lists = keys
+    headers = '<tr>'
     for item in lists:
-        result += '<th>' + item.strip() + '</th>'
-    result += '</tr>\n'
-    return result
+        headers += '<th>' + item.strip() + '</th>'
+    headers += '</tr>\n'
+    return headers
 
 def lists2table(ale):
     """
     """
     lists = aleparser.AleParser(ale)
-    result = '<table>\n'
-    result += list2throw(lists.keys) + '\n'
+    table = '<table>\n'
+    table += list2throw(lists.keys)
     for item in lists.data:
-        result += list2tdrow(item) + '\n'
-    result += '</table>'
-    return result
+        table += list2tdrow(item) + '\n'
+    table += '</table>'
+    return table
 
 ALE = lists2table('204027.ALE')
 print(ALE)
