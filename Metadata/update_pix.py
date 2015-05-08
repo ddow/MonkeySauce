@@ -17,7 +17,7 @@ CLIENT = PIXClient(APP_KEY, HOST)
 try:
     PASSWORD = os.environ['PIX_PASSWORD']
 except KeyError:
-    PASSWORD = 'TigAssBitties12!'
+    PASSWORD = ''
 
 try:
     PASSWORD = base64.b64decode(PASSWORD)
